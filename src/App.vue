@@ -45,7 +45,7 @@ export default {
   methods: {
     async listar(){
       const {resp} = await App.getConnection();
-      HTMLFormControlsCollection.log(resp);
+      console.log(resp);
     }
   }
  
