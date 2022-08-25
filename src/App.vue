@@ -29,6 +29,9 @@ window.alert(5 + 6);
 //importing bootstrap 5 and axios
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from 'axios'
+//call connection from file
+import App from './services/connection'
+
 export default {
   data(){
   return {
@@ -37,14 +40,14 @@ export default {
     }
   },
  mounted () {
-    //api caling
-     axios
-      .get('http://150.136.7.153:5000/meas')
-      .then((resp) => {
-        window.alert(resp);
-        this.meas = resp.data;
-      })
+    this.listar()
   },
+  methods: {
+    async listar(){
+      const {resp} = await App.getConnection();
+      HTMLFormControlsCollection.log(resp);
+    }
+  }
  
 }
 </script>
