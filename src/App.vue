@@ -39,6 +39,18 @@ export default {
     
     }
   },
+
+  mounted () {
+    //api caling
+     axios
+      .get('http://150.136.7.153:5000/meas')
+      .then((resp) => {
+        window.alert(resp);
+        this.meas = resp.data;
+      })
+  },
+  
+  /* Calling conection from another file
  mounted () {
     this.listar()
   },
@@ -47,7 +59,7 @@ export default {
       const {resp} = await App.getConnection();
       console.log(resp);
     }
-  }
+  }*/
  
 }
 </script>
