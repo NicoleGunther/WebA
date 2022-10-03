@@ -1,6 +1,7 @@
 <template>
   <div class="container p-5">
   <h1 class="text-center border-bottom pb-3 mb-3">Vue3 PostgreSQL</h1>
+  <canvas id="myChart" width="400" height="400"></canvas>
    <table class="table table-hover table-bordered mt-5">
      <thead>
        <tr>
@@ -47,6 +48,11 @@
        .then((resp) => {
          window.alert(resp);
          this.meas = resp.data;
+      
+      //chart js 
+      console.log('Component mounted.')
+          
+      //const ctx = document.getElementById('myChart');
        })
    },
  
@@ -63,3 +69,4 @@
   */
  }
  </script>
+ 
